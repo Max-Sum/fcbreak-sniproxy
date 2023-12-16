@@ -1,0 +1,9 @@
+proxies:
+  - name: {{.Info.Name}}
+    type: http
+    server: {{.ExposedHost}}
+    port: {{.ExposedPort}}
+    tls: {{ if eq .Info.Scheme "https" }}true{{ else }}false{{ end }}
+    username: {{.Username}}
+    password: {{.Password}}
+    skip-cert-verify: false
